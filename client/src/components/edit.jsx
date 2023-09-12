@@ -3,14 +3,20 @@ function Edit() {
     return (
         <div>
             <form>
-                <label>Name</label>
-                <input/>
-                <label>Date</label>
-                <input/>
-                <label>Description</label>
-                <input/>
-                <button>Save</button>
-                <button>Delete</button>
+                <label>
+                    Name <input type="text" name="name"/>
+                </label>
+                
+                <label>
+                    Date <input type="text" name="date"/>
+                </label>
+                
+                <label>
+                    Description <input type="text" name="descript"/>
+                </label>
+                
+                <button type="submit" >Save</button>
+                <button type="delete" >Delete</button>
             </form>
         </div>
     )
