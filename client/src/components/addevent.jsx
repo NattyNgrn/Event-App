@@ -1,8 +1,14 @@
 function Addevent() {
+    
+    /*function handleSubmit(e){
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+    }*/
 
     return (
         <div>
-            <form>
+            <form method="post" onSubmit={handleSubmit}>
                 <label>
                     Name <input type="text" name="name"/>
                 </label>
