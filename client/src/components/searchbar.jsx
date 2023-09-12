@@ -3,9 +3,11 @@ function Searchbar() {
     return (
         <div>
             <form>
-                <label>Search</label>
-                <input/>
-                <button>Search</button>
+                <label>
+                    Search <input type="text" name="search"/>
+                </label>
+                
+                <button type="submit" >Search</button>
             </form>
         </div>
     )
