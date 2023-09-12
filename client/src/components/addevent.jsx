@@ -3,13 +3,19 @@ function Addevent() {
     return (
         <div>
             <form>
-                <label>Name</label>
-                <input></input>
-                <label>Date</label>
-                <input></input>
-                <label>Description</label>
-                <input></input>
-                <button>Save</button>
+                <label>
+                    Name <input type="text" name="name"/>
+                </label>
+    
+                <label>
+                    Date <input type="text" name="date"/>
+                </label>
+
+                <label>
+                    Description <input type="text" name="descript"/> 
+                </label>
+
+                <button type="submit" >Save</button>
             </form>
         </div>
     )

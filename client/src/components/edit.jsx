@@ -4,11 +4,11 @@ function Edit() {
         <div>
             <form>
                 <label>Name</label>
-                <input></input>
+                <input/>
                 <label>Date</label>
-                <input></input>
+                <input/>
                 <label>Description</label>
-                <input></input>
+                <input/>
                 <button>Save</button>
                 <button>Delete</button>
             </form>

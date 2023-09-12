@@ -4,7 +4,7 @@ function Searchbar() {
         <div>
             <form>
                 <label>Search</label>
-                <input></input>
+                <input/>
                 <button>Search</button>
             </form>
         </div>
