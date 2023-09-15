@@ -9,7 +9,7 @@ function App() {
   return (
       <div>
         <h1>Eventonica</h1>
-        <Addevent></Addevent>
+        <button onClick={Addevent} text="Call Component">Add Event</button>
         <Searchbar></Searchbar>
         <Bar></Bar>
         <Eventlist></Eventlist>

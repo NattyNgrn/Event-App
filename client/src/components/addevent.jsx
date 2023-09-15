@@ -1,11 +1,21 @@
 function Addevent() {
     
-    /*function handleSubmit(e){
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-    }*/
-
+    async function addEvent(name, description, date, favorite) {
+        const result = await fetch(API + `/addEvent/`, {
+            method: "POST",
+            body: JSON.stringify({
+                name: name,
+                description: description,
+                date: date,
+                favorite: favorite
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log(result);
+    }
+    
     return (
         <div>
             <form method="post" onSubmit={handleSubmit}>
@@ -21,7 +31,7 @@ function Addevent() {
                     Description <input type="text" name="descript"/> 
                 </label>
 
-                <button type="submit" >Save</button>
+                <button type="submit" onClick={}>Save</button>
             </form>
         </div>
     )

@@ -1,6 +1,11 @@
-const {pool, client} = require("pg");
+import pg from "pg";
 
-const client = new client({
-    host: "localhost",
-    port: 4444 
-})
+const DB = new pg.Client({
+    user: 'me',
+    host: 'localhost',
+    database: 'events',
+    password: 'password',
+    port: 5432
+});
+
+export default DB;
