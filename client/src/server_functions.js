@@ -56,3 +56,4 @@ async function deleteEvent(id) {
 getEvents();
 
 
+export {getEvents, getEventById, addEvent, deleteEvent, editEvent};

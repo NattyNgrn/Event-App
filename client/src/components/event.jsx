@@ -1,7 +1,7 @@
 import Edit from "./edit.jsx";
 
 
-function Eventlist({name, date, description}) {
+function Event({name, date, description, favorite}) {
 
     return (
         <div style={{
@@ -11,7 +11,7 @@ function Eventlist({name, date, description}) {
             height: '100%',
             padding: ""
         }}>
-            <button style={{margin: '20px'}}>favorite</button>
+            <button style={{margin: '20px'}}>{favorite}</button>
             <h2 style={{margin: '20px'}}>{name}</h2>
             <h2 style={{margin: '20px'}}>{date}</h2>
             <h2 style={{margin: '20px'}}>{description}</h2>
@@ -20,4 +20,4 @@ function Eventlist({name, date, description}) {
     )
 }
 
-export default Eventlist;
+export default Event;
