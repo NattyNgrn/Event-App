@@ -17,8 +17,8 @@ function Addevent() {
     }
     
     return (
-        <div>
-            <form method="post" onSubmit={handleSubmit}>
+        <div >
+            <form method="post" onSubmit={addEvent}>
                 <label>
                     Name <input type="text" name="name"/>
                 </label>
@@ -31,7 +31,7 @@ function Addevent() {
                     Description <input type="text" name="descript"/> 
                 </label>
 
-                <button type="submit" onClick={}>Save</button>
+                <button type="submit" onClick={addEvent}>Save</button>
             </form>
         </div>
     )
