@@ -10,8 +10,10 @@ function App() {
 
   const [events, setEvents] = useState([]);
 
-  getEvents().then((result)=>setEvents(result));
-
+  async function refresh(){
+    const tempEvents = await getEvents();
+    setEvents(tempEvents);
+  }
 
   return (
       <div style={{
@@ -24,9 +26,10 @@ function App() {
         <button>Add Event</button>
         <Addevent></Addevent>
         <Searchbar></Searchbar>
+        <button onClick={refresh}>refresh</button>
         <Bar></Bar>
         {events.map((event) => 
-          <Event name={event.name} date={event.date.substring(0,10)} description={event.description} favorite={event.favorite}>
+          <Event id={event.id} name={event.name} date={event.date.substring(0,10)} description={event.description} favorite={event.favorite}>
           </Event>
         )}
       </div>

@@ -1,24 +1,8 @@
+
+import { editEvent } from "../server_functions";
+
 function Edit() {
-    async function deleteEvent(id) {
-        const result = await fetch(API + `/delete/${id}`);
-        console.log(result);
-    }
     
-    async function editEvent(id, name, description, date, favorite) {
-        const result = await fetch(API + `/updateEvent/${id}`, {
-            method: "PUT",
-            body: JSON.stringify({
-                name: name,
-                description: description,
-                date: date,
-                favorite: favorite
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-        console.log(result);
-    }
 
     return (
         <div>
@@ -36,7 +20,6 @@ function Edit() {
                 </label>
                 
                 <button type="submit" onClick={editEvent}>Save</button>
-                <button type="delete" onClick={deleteEvent} >Delete</button>
             </form>
         </div>
     )

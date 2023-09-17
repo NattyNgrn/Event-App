@@ -23,9 +23,9 @@ app.get("/", (req, res) => {
 
 app.get('/events', async (req, res) =>{
     try{
-        const id = req.params.id;
         const result = await DB.query(`SELECT * FROM eventsTable;`);
         const rows = result.rows;
+        console.log("getting called");
         res.send(rows);
     } catch(error){
         console.log(error);
@@ -81,7 +81,7 @@ app.delete('/delete/:id', async(req, res) => {
     try{
         const id = req.params.id;
         const result = await DB.query(`DELETE FROM eventsTable WHERE id=${id};`);
-        res.send(0);
+        res.send({});
     } catch(error){
         console.log(error);
         return res.status(400).json({error});

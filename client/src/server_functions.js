@@ -1,5 +1,5 @@
 
-const API = "http://localhost:8080"
+const API = "http://localhost:8080";
 
 async function getEvents() {
     const result = await fetch(API + "/events");
@@ -48,12 +48,14 @@ async function editEvent(id, name, description, date, favorite) {
 }
 
 async function deleteEvent(id) {
-    const result = await fetch(API + `/delete/${id}`);
-    console.log(result);
+    const result = await fetch(API + `/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const result2 = await result.json();
+    console.log(result2);
 }
-
-//addEvent("hello", "testing", "05-30-2023", true);
-getEvents();
-
 
 export {getEvents, getEventById, addEvent, deleteEvent, editEvent};

@@ -5,7 +5,7 @@ function Addevent() {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [description, setDescription] = useState("");
-    const [favorite, setFavorite] = useState(true);
+    const [favorite, setFavorite] = useState(false);
     
     function submit(e){
         e.preventDefault();
