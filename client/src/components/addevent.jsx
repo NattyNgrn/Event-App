@@ -1,23 +1,25 @@
 import { addEvent } from "../server_functions";
 import { useState } from "react";
 
-function Addevent() {
+function Addevent({refresh}) {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [description, setDescription] = useState("");
     const [favorite, setFavorite] = useState(false);
     
-    function submit(e){
-        e.preventDefault();
-        addEvent(name, description, date, favorite);
+    async function submit(){
+
+        const result = await addEvent(name, description, date, favorite);
         setName("")
         setDate("")
         setDescription("")
+        
+        await refresh();
     }
 
     return (
         <div>
-            <form method="post" onSubmit={submit}>
+            <form>
                 <label>
                     Name: <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}/>
                 </label>
@@ -31,7 +33,7 @@ function Addevent() {
                 </label>
                 <button onClick={(e) => {setFavorite(!favorite)}} >Fave</button>
 
-                <button type="submit" onSubmit={submit}>Save</button>
+                <button onClick={submit}>Save</button>
             </form>
         </div>
     )

@@ -47,6 +47,8 @@ async function editEvent(id, name, description, date, favorite) {
     console.log(result);
 }
 
+editEvent(27, "natty", "fcugcg", "2024-02-19", true);
+
 async function deleteEvent(id) {
     const result = await fetch(API + `/delete/${id}`, {
         method: "DELETE",

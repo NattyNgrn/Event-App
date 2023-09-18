@@ -67,10 +67,12 @@ app.put('/updateEvent/:id', async (req, res) => {
         const {name, date, description, favorite} = req.body;
         const result = await DB.query(`
             UPDATE eventsTable
-            SET name=${name}, date=${date}, description=${description}, favorite=${favorite}
+            SET name='${name}', date='${date}', description='${description}', favorite='${favorite}'
             WHERE id=${id};
         `);
-        res.send(0);
+        console.log(id);
+        console.log(description);
+        res.send("ur mom ");
     } catch(error){
         console.log(error);
         return res.status(400).json({error});
